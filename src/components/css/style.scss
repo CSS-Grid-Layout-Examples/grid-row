@@ -1,0 +1,110 @@
+/* app imports */
+@import "../../common/css/variables.scss";
+@import "../../common/css/mixins.scss";
+@import "./list-item-styles.scss";
+
+.container {
+  overflow: hidden;
+  margin-top: 100px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border-radius: 15px;
+  background: #eee;
+  padding: 100px 50px calc(100px - 15px) 50px !important;
+  &:last-child {
+    margin-bottom: 100px;
+  }
+  .info {
+    line-height: 1.4rem;
+    font-size: 0.85rem;
+    color: #555;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+}
+
+.simpleRowSpanLayout {
+  ul {
+    margin-bottom: 45px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    li:nth-child(2) {
+      grid-row: span 2;
+      display: flex;
+      flex-flow: column wrap;
+      span {
+        height: 52px;
+      }
+      .image {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+.gridRowStartEndLayout {
+  ul {
+    margin-bottom: 45px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    li:nth-child(2) {
+      grid-column: 3;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      display: flex;
+      flex-flow: column wrap;
+      span {
+        height: 52px;
+      }
+      .image {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+.mixedLayoutWithRowCol {
+  ul {
+    margin-bottom: 45px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    li:nth-child(3) {
+      grid-column: span 2;
+      grid-row: span 2;
+      display: flex;
+      flex-flow: column wrap;
+      span {
+        height: 52px;
+      }
+      .image {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+.twoTowersLayout {
+  ul {
+    margin-bottom: 45px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    li {
+      &:first-child,
+      &:last-child {
+        grid-row: 1/4;
+        display: flex;
+        flex-flow: column wrap;
+        .image {
+          flex-grow: 1;
+        }
+        span {
+          height: 52px;
+        }
+      }
+      &:last-child {
+        grid-column: 3/4;
+      }
+    }
+  }
+}
